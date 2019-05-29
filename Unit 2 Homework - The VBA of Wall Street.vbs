@@ -163,14 +163,14 @@ End Sub
 
 ' CHALLENGE
 
-Sub Challenge()
-    Dim xSh As Worksheet
-    Application.ScreenUpdating = False
-    For Each xSh In Worksheets
-        xSh.Select
-        Call HardChallenge
-    Next
-    Application.ScreenUpdating = True
+Sub Worksheeets()
+	Dim ws As Worksheet
+	
+	For Each ws In Worksheets
+		MsgBox (ws.Name)
+		ws.Activate
+		Call HardChallenge
+	Next
 End Sub
 
 Sub HardChallenge()
@@ -262,6 +262,15 @@ End Sub
 
 
 ' EXTRA!
+
+Sub ResetWorksheeets()
+	Dim ws As Worksheet
+	
+	For Each ws In Worksheets
+		ws.Activate
+		Call Reset
+	Next
+End Sub
 
 Sub Reset()
 	Dim NumOfTickers
